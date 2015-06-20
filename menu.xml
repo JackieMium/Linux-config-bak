@@ -77,6 +77,11 @@
         </startupnotify>
       </action>
     </item>
+    <item label="Gimp" icon="/usr/share/icons/Numix-Circle/48x48/apps/gimp.svg">
+      <action name="Execute">
+        <command>gimp</command>
+      </action>
+    </item>
   </menu>
   <menu id="apps-office-menu" label="Office" icon="/usr/share/icons/Numix-Circle/48x48/apps/preferences-kcalc-constants.svg">
     <item label="LibreOffice Suite" icon="/usr/share/icons/Numix-Circle/48x48/apps/libreoffice-calc.svg">

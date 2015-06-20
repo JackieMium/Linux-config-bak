@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+  <menu id="apps-accessories-menu" label="Accessories" icon="/usr/share/icons/Numix-Circle/48x48/apps/yast.svg">
+    <item label="MousePad" icon="/usr/share/icons/Numix-Circle/48x48/apps/text-editor.svg">
+      <action name="Execute">
+        <execute>mousepad</execute>
+      </action>
+    </item>
+    <item label="Snapshot" icon="/usr/share/icons/Numix-Circle/48x48/apps/gnome-screenshot.svg">
+      <action name="Execute">
+        <execute>scrot -s '%F-%H:%M_by_scrot.png' -e 'mv $f ~/Picture/screenshots/'</execute>
+      </action>
+    </item>
+    <item label="Voice Control" icon="/usr/share/icons/Numix-Circle/48x48/apps/spek.svg">
+      <action name="Execute">
+        <execute>pavucontrol</execute>
+      </action>
+    </item>
+  </menu>
+  <menu id="apps-term-menu" label="Terminals" icon="/usr/share/icons/Numix-Circle/48x48/apps/terminal.svg">
+    <item label="XfceTerminal" icon="/usr/share/icons/Numix-Circle/48x48/apps/final-term.svg">
+      <action name="Execute">
+        <execute>xfce4-terminal --geometry=150x40</execute>
+      </action>
+    </item>
+    <item label="UXterm" icon="/usr/share/icons/Numix-Circle/48x48/apps/xterm-color.svg">
+      <action>
+        <execute>uxterm -geometry 138x35</execute>
+      </action>
+    </item>
+  </menu>
+  <menu id="apps-net-menu" label="Internet" icon="/usr/share/icons/Numix-Circle/48x48/apps/web-browser.svg">
+    <item label="Opare" icon="/usr/share/icons/Numix-Circle/48x48/apps/opera-next-browser.svg">
+      <action name="Execute">
+        <command>opera</command>
+      </action>
+    </item>
+    <item label="Firefox" icon="/usr/share/icons/Numix-Circle/48x48/apps/firefox.svg">
+      <action name="Execute">
+        <command>firefox</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <wmclass>Firefox</wmclass>
+        </startupnotify>
+      </action>
+    </item>
+    <item label="Chrome" icon="/usr/share/icons/Numix-Circle/48x48/apps/google-chrome.svg">
+      <action name="Execute">
+        <execute>/home/adam/.open-chrome.sh</execute>
+      </action>
+    </item>
+    <item label="Telegram" icon="/usr/share/icons/Numix-Circle/48x48/apps/telegram.svg">
+      <action name="Execute">
+        <execute>/opt/telegram/Telegram</execute>
+      </action>
+    </item>
+    <item label="Leanote" icon="/usr/share/icons/Numix-Circle/48x48/apps/evernote.svg">
+      <action name="Execute">
+        <execute>/home/adam/Programs/leanote-linux-x64-v0.5.1/leanote</execute>
+      </action>
+    </item>
+    <item label="XChat" icon="/usr/share/icons/Numix-Circle/48x48/apps/xorg.svg">
+      <action name="Execute">
+        <command>xchat</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+        </startupnotify>
+      </action>
+    </item>
+  </menu>
+  <menu id="apps-graphics-menu" label="Graphics" icon="/usr/share/icons/Numix-Circle/48x48/apps/accessories-image-viewer.svg">
+    <item label="Gwenview" icon="/usr/share/icons/Numix-Circle/48x48/apps/gpicview.svg">
+      <action name="Execute">
+        <command>gwenview</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+        </startupnotify>
+      </action>
+    </item>
+  </menu>
+  <menu id="apps-office-menu" label="Office" icon="/usr/share/icons/Numix-Circle/48x48/apps/preferences-kcalc-constants.svg">
+    <item label="LibreOffice Suite" icon="/usr/share/icons/Numix-Circle/48x48/apps/libreoffice-calc.svg">
+      <action name="Execute">
+        <execute>libreoffice</execute>
+      </action>
+    </item>
+  </menu>
+  <menu id="apps-multimedia-menu" label="Multimedia" icon="/usr/share/icons/Numix-Circle/48x48/apps/shotcut.svg">
+    <item label="SMplayer" icon="/usr/share/icons/Numix-Circle/48x48/apps/mplayer.svg">
+      <action name="Execute">
+        <execute>smplayer</execute>
+      </action>
+    </item>
+    <item label="Rhythmbox" icon="/usr/share/icons/Numix-Circle/48x48/apps/multimedia-audio-player.svg">
+      <action name="Execute">
+        <command>rhythmbox</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+        </startupnotify>
+      </action>
+    </item>
+  </menu>
+  <menu id="apps-fileman-menu" label="File Managers" icon="/usr/share/icons/Numix-Circle/48x48/apps/marlin.svg">
+    <item label="Thunar" icon="/usr/share/icons/Numix-Circle/48x48/apps/thunar.svg">
+      <action name="Execute">
+        <command>Thunar</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+        </startupnotify>
+      </action>
+    </item>
+  </menu>
+  <menu id="system-menu" label="Settings" icon="/usr/share/icons/Numix-Circle/48x48/apps/preferences-system.svg">
+    <item label="Openbox Configuration Manager" icon="/usr/share/icons/Numix-Circle/48x48/apps/administration.svg">
+      <action name="Execute">
+        <command>obconf</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+        </startupnotify>
+      </action>
+    </item>
+    <item label="Desktop Menu Configuration" icon="/usr/share/icons/Numix-Circle/48x48/apps/preferences-desktop-keyboard-shortcuts.svg">
+      <action name="Execute">
+        <execute>obmenu3</execute>
+      </action>
+    </item>
+    <item label="Tint2 Configuration" icon="/usr/share/icons/Numix-Circle/48x48/apps/preferences-system-old.svg">
+      <action name="Execute">
+        <execute>tint2conf</execute>
+      </action>
+    </item>
+    <item label="Xfce Settings" icon="/usr/share/icons/Numix-Circle/48x48/apps/application-default-icon.svg">
+      <action name="Execute">
+        <command>xfce4-settings-manager</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+        </startupnotify>
+      </action>
+    </item>
+    <item label="Gtk Chtheme" icon="/usr/share/icons/Numix-Circle/48x48/apps/preferences-plugin.svg">
+      <action name="Execute">
+        <execute>gtk-chtheme</execute>
+      </action>
+    </item>
+    <item label="GTK Greeter Settings" icon="/usr/share/icons/Numix-Circle/48x48/apps/preferences-desktop-user.svg">
+      <action name="Execute">
+        <execute>lightdm-gtk-greeter-settings-pkexec</execute>
+      </action>
+    </item>
+    <item label="Reconfigure Openbox">
+      <action name="Reconfigure"/>
+    </item>
+  </menu>
+  <menu id="root-menu" label="Openbox 3">
+    <separator label="Applications"/>
+    <menu id="apps-accessories-menu" label="Aaccessories" icon="/usr/share/icons/Numix-Circle/48x48/apps/yast.svg"/>
+    <menu id="apps-term-menu" label="Terminal" icon="/usr/share/icons/Numix-Circle/48x48/apps/terminal.svg"/>
+    <menu id="apps-net-menu" label="Internet" icon="/usr/share/icons/Numix-Circle/48x48/apps/web-browser.svg"/>
+    <menu id="apps-graphics-menu" label="Graphics" icon="/usr/share/icons/Numix-Circle/48x48/apps/accessories-image-viewer.svg"/>
+    <menu id="apps-office-menu" label="Office" icon="/usr/share/icons/Numix-Circle/48x48/apps/preferences-kcalc-constants.svg"/>
+    <menu id="apps-multimedia-menu" label="MultiMedia" icon="/usr/share/icons/Numix-Circle/48x48/apps/shotcut.svg"/>
+    <menu id="apps-fileman-menu" label="FileManager" icon="/usr/share/icons/Numix-Circle/48x48/apps/marlin.svg"/>
+    <separator label="System"/>
+    <menu id="system-menu" label="Settings" icon="/usr/share/icons/Numix-Circle/48x48/apps/preferences-system.svg"/>
+    <menu id="root-menu-895332" label="Power" icon="/usr/share/icons/Numix-Circle/48x48/apps/boot.svg">
+      <item label="Reboot">
+        <action name="Execute">
+          <execute>reboot</execute>
+        </action>
+      </item>
+      <item label="Logout">
+        <action name="Exit"/>
+      </item>
+      <item label="Shutdown">
+        <action name="Execute">
+          <execute>shutdown -h now</execute>
+        </action>
+      </item>
+    </menu>
+  </menu>
+</openbox_menu>

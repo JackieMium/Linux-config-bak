@@ -8,7 +8,7 @@
     </item>
     <item label="Snapshot" icon="/usr/share/icons/Numix-Circle/48x48/apps/gnome-screenshot.svg">
       <action name="Execute">
-        <execute>scrot -s '%F-%H:%M_by_scrot.png' -e 'mv $f ~/Picture/screenshots/'</execute>
+        <execute>scrot -s '%F-%H:%M_by_scrot.png' -e 'mv $f ~/Pictures/Screenshots/'</execute>
       </action>
     </item>
     <item label="Voice Control" icon="/usr/share/icons/Numix-Circle/48x48/apps/spek.svg">
@@ -23,16 +23,16 @@
         <execute>xfce4-terminal --geometry=150x40</execute>
       </action>
     </item>
-    <item label="UXterm" icon="/usr/share/icons/Numix-Circle/48x48/apps/xterm-color.svg">
-      <action>
-        <execute>uxterm -geometry 138x35</execute>
+    <item label="UXterm" icon="/usr/share/icons/Numix-Circle/48x48/apps/uxterm.svg">
+      <actioni name="Execute">
+        <execute>uxterm</execute>
       </action>
     </item>
   </menu>
   <menu id="apps-net-menu" label="Internet" icon="/usr/share/icons/Numix-Circle/48x48/apps/web-browser.svg">
-    <item label="Opare" icon="/usr/share/icons/Numix-Circle/48x48/apps/opera-next-browser.svg">
+    <item label="Vivaldi" icon="/usr/share/icons/Numix-Circle-Light/48x48/apps/vivaldi.svg">
       <action name="Execute">
-        <command>opera</command>
+        <command>vivaldi</command>
       </action>
     </item>
     <item label="Firefox" icon="/usr/share/icons/Numix-Circle/48x48/apps/firefox.svg">
@@ -46,12 +46,12 @@
     </item>
     <item label="Chrome" icon="/usr/share/icons/Numix-Circle/48x48/apps/google-chrome.svg">
       <action name="Execute">
-        <execute>/home/adam/.open-chrome.sh</execute>
+        <execute>google-chrome</execute>
       </action>
     </item>
     <item label="Telegram" icon="/usr/share/icons/Numix-Circle/48x48/apps/telegram.svg">
       <action name="Execute">
-        <execute>/opt/telegram/Telegram</execute>
+        <execute>/home/adam/Public/Telegram/Telegram</execute>
       </action>
     </item>
     <item label="Leanote" icon="/usr/share/icons/Numix-Circle/48x48/apps/evernote.svg">
@@ -69,9 +69,9 @@
     </item>
   </menu>
   <menu id="apps-graphics-menu" label="Graphics" icon="/usr/share/icons/Numix-Circle/48x48/apps/accessories-image-viewer.svg">
-    <item label="Gwenview" icon="/usr/share/icons/Numix-Circle/48x48/apps/gpicview.svg">
+    <item label="GPivView" icon="/usr/share/icons/Numix-Circle/48x48/apps/gpicview.svg">
       <action name="Execute">
-        <command>gwenview</command>
+        <command>gpicview</command>
         <startupnotify>
           <enabled>yes</enabled>
         </startupnotify>
@@ -106,9 +106,9 @@
     </item>
   </menu>
   <menu id="apps-fileman-menu" label="File Managers" icon="/usr/share/icons/Numix-Circle/48x48/apps/marlin.svg">
-    <item label="Thunar" icon="/usr/share/icons/Numix-Circle/48x48/apps/thunar.svg">
+    <item label="PCManFM" icon="/usr/share/icons/Numix-Circle/48x48/apps/thunar.svg">
       <action name="Execute">
-        <command>Thunar</command>
+        <command>pcmanfm</command>
         <startupnotify>
           <enabled>yes</enabled>
         </startupnotify>
@@ -134,9 +134,9 @@
         <execute>tint2conf</execute>
       </action>
     </item>
-    <item label="Xfce Settings" icon="/usr/share/icons/Numix-Circle/48x48/apps/application-default-icon.svg">
+    <item label="LXappearance" icon="/usr/share/icons/Numix-Circle/48x48/apps/application-default-icon.svg">
       <action name="Execute">
-        <command>xfce4-settings-manager</command>
+        <command>lxappearance</command>
         <startupnotify>
           <enabled>yes</enabled>
         </startupnotify>
@@ -170,7 +170,7 @@
     <menu id="root-menu-895332" label="Power" icon="/usr/share/icons/Numix-Circle/48x48/apps/boot.svg">
       <item label="Reboot">
         <action name="Execute">
-          <execute>reboot</execute>
+          <execute>systemctl reboot</execute>
         </action>
       </item>
       <item label="Logout">
@@ -178,7 +178,7 @@
       </item>
       <item label="Shutdown">
         <action name="Execute">
-          <execute>shutdown -h now</execute>
+          <execute>systemctl poweroff</execute>
         </action>
       </item>
     </menu>

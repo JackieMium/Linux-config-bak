@@ -1,0 +1,12 @@
+
+
+ feh --bg-scale /home/adam/Pictures/Wallpapers/ceystalhorizon.png &
+#feh --bg-scale /home/adam/Pictures/Wallpapers/maxresdefault.jpg &
+
+tint2 &
+
+nm-applet &
+clipit&
+pnmixer &
+mate-power-manager &
+synclient TapButton1=1 &

@@ -1,0 +1,46 @@
+############
+# Settings #
+############
+
+own_window_argb_visual yes
+own_window_argb_value 100
+
+background yes
+use_xft yes
+xftfont Liberation Sans:size=7
+xftalpha 1
+update_interval 3.0
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 200 200
+maximum_width 240
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color 656667
+default_shade_color 000000
+default_outline_color 828282
+default_bar_size 210 2
+alignment top_right
+gap_x 20
+gap_y 60
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+##########
+# Output #
+##########
+TEXT
+${color #FFFFFF}${font Ostrich Sans:pixelsize=20}CPU: ${CPU}%
+${voffset -10}${cpubar 3}
+RAM: ${mem}
+${voffset -10}${membar 3}
+HDD: ${fs_used /home}
+${voffset -10}${fs_bar 3 /home}
+

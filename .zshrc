@@ -35,9 +35,9 @@ alias search='apt search'
 alias show='apt show'
 
 export JAVA_HOME=/usr/lib/jvm/oracle-java8-jdk-amd64/jre
-export LD_LIBRARY_PATH=$JAVA_HOME/lib/amd64:$JAVA_HOME/lib/amd64/server
+#export LD_LIBRARY_PATH=$JAVA_HOME/lib/amd64:$JAVA_HOME/lib/amd64/server
 
-
+# remenber /sbin:/usr/sbin:/usr/local/sbin for root!
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/adam/miniconda3/bin:/home/adam/Bioinformatics/Software/bin:$JAVA_HOME/bin:/usr/lib/jvm/oracle-java8-jdk-amd64/bin:/home/adam/.aspera/connect/bin:/home/adam/Bioinformatics/Software/FastQC:/home/adam/Bioinformatics/Software/bowtie2-2.3.1:/home/adam/Bioinformatics/Software/bowtie-1.2:/home/adam/Bioinformatics/Software/cufflinks-2.2.1.Linux_x86_64:/home/adam/Bioinformatics/Software/FastUniq:/home/adam/Bioinformatics/Software/tophat-2.1.1.Linux_x86_64:/home/adam/Bioinformatics/Software/fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64:/home/adam/Bioinformatics/Software/samtools-1.4/bin:/home/adam/Bioinformatics/Software/bedtools2/bin/:/home/adam/Bioinformatics/Software/annovar:/home/adam/Bioinformatics/Software/RSEM-1.3.0:/home/adam/Bioinformatics/Software/VennPainter_x64
 #:/home/adam/.TinyTeX/bin/x86_64-linux
 

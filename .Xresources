@@ -1,0 +1,11 @@
+xterm*faceName: Source Code Pro:style=Regular
+! support chinese
+xterm*faceNameDoublesize: Droid Sans Fallback:style=Regular
+xterm*faceSize: 10
+
+xterm*vt100.geometry: 120x50
+xterm*loginshell: true
+! support 256color
+xterm*termName: xterm-256color
+! set Ctrl + V for paste   http://forum.ubuntu.org.cn/viewtopic.php?t=143221
+XTerm*VT100.Translations: #override Ctrl <KeyPress> V: insert-selection(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n <BtnUp>: select-end(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n Ctrl <KeyPress> P: print() \n

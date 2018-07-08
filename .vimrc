@@ -4,9 +4,17 @@ set laststatus  =2	" Always show statusline.
 set showmode		" Show current mode in command-line.
 set showcmd		" Show already typed keys when more are expected.
 set hlsearch		" Keep matches highlighted.
+set incsearch              " Highlight while searching with / or ?.
 set cursorline		" highlight current line
 set nocp		" no compatible
 set ruler		"show cursor position at bottom right
+set backspace   =indent,eol,start  " Make backspace work as you would expect.
+set hidden                 " Switch between buffers without having to save first.
+set laststatus  =2         " Always show statusline.
+set display     =lastline  " Show as much as possible of the last line.
+
+set showmode               " Show current mode in command-line.
+set showcmd                " Show already typed keys when more are expected.
 
 
 " Specify a directory for plugins

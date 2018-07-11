@@ -11,14 +11,14 @@ options(stringsAsFactors = FALSE, show.signif.stars = TRUE, digits = 4)
 
 # set CRAN mirror. Better add at least two in case that one of them stops working
 options(repos=c("http://mirrors.ustc.edu.cn/CRAN/", "https://mirrors.tongji.edu.cn/CRAN/",
-                "http://mirrors.tuna.tsinghua.edu.cn/CRAN/", "https://mirrors.aliyun.com/CRAN/"))
+                "http://mirrors.tuna.tsinghua.edu.cn/CRAN/", "https://mirrors.aliyun.com/CRAN/", 
+                "http://mirror.lzu.edu.cn/CRAN/"))
 
 # lanuch Bioconductor may take too long, disable auto start and start when needed
 source.bio <- function(){
 	source("http://bioconductor.org/biocLite.R")
-	options(BioC_mirror="http://mirrors.ustc.edu.cn/bioc/")
+	options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")  # "http://mirrors.ustc.edu.cn/bioc/" 
 }
-
 
 # useful little customized functions
 cd <- setwd
@@ -28,10 +28,13 @@ hh <- function(d) {
   col_num <- min(5,ncol(d))
   return(d[1:row_num,1:col_num])
 }
+notify <- function(){
+	cmd <- "notify-send"
+	system2(cmd, args="-i r 'R Message' 'Mission Complete!'")
+}
 
 # load favorite packages automatically at startup
-options(defaultPackages=c(getOption("defaultPackages"), 'beepr',
-       "colorout"))
+options(defaultPackages=c(getOption("defaultPackages"), 'beepr'))
 
 # display greeting message at startup
 .First <- function(){
@@ -41,7 +44,7 @@ options(defaultPackages=c(getOption("defaultPackages"), 'beepr',
 	message("###### SUCCESSFULLY LOADED. LET'S DO THIS! ######")
 }
 
-# goodbye at closing
-.Last <- function() {
-	cat("\nGoodbye at ", date(), "\n")
-}
+# goodbye message at closing
+#.Last <- function() {
+#	cat("\nGoodbye at ", date(), "\n")
+#}

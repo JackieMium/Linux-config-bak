@@ -10,9 +10,10 @@ options(stringsAsFactors = FALSE, show.signif.stars = TRUE, digits = 4)
 #source("https://bioc.ism.ac.jp/biocLite.R")   # an alternative Japanese mirror
 
 # set CRAN mirror. Better add at least two in case that one of them stops working
-options(repos=c("http://mirrors.ustc.edu.cn/CRAN/", "https://mirrors.tongji.edu.cn/CRAN/",
-                "http://mirrors.tuna.tsinghua.edu.cn/CRAN/", "https://mirrors.aliyun.com/CRAN/", 
-                "http://mirror.lzu.edu.cn/CRAN/"))
+options(repos="http://mirrors.ustc.edu.cn/CRAN/")
+#options(repos=c("http://mirrors.ustc.edu.cn/CRAN/", "https://mirrors.tongji.edu.cn/CRAN/",
+#                "http://mirrors.tuna.tsinghua.edu.cn/CRAN/", "https://mirrors.aliyun.com/CRAN/", 
+#                "http://mirror.lzu.edu.cn/CRAN/"))
 
 # lanuch Bioconductor may take too long, disable auto start and start when needed
 source.bio <- function(){
@@ -30,11 +31,12 @@ hh <- function(d) {
 }
 notify <- function(){
 	cmd <- "notify-send"
-	system2(cmd, args="-i r 'R Message' 'Mission Complete!'")
+	system2(cmd, args="-i emblem-default 'R Message' 'Mission Complete!'")
 }
+beep <- function(){beepr::beep()}
 
 # load favorite packages automatically at startup
-options(defaultPackages=c(getOption("defaultPackages"), 'beepr'))
+# options(defaultPackages=c(getOption("defaultPackages"), 'beepr'))
 
 # display greeting message at startup
 .First <- function(){

@@ -1,6 +1,7 @@
 # customized options
 options(prompt="\033[0;36mR >>> \033[0m", continue="... ")
 options(editor="vim", menu.graphics=FALSE)
+options(download.file.method='wget', max.print=1000)
 options(stringsAsFactors = FALSE, show.signif.stars = TRUE, digits = 4)
 
 # launch Bioconductor and set Bioconductor mirror at startup

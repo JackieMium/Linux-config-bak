@@ -1,26 +1,22 @@
 # customized options
 options(prompt="\033[0;36mR >>> \033[0m", continue="... ")
 options(editor="vim", menu.graphics=FALSE)
-options(download.file.method='wget', max.print=1000)
-options(stringsAsFactors = FALSE, show.signif.stars = TRUE, digits = 4)
+options(max.print=1000)
+options(stringsAsFactors = FALSE, show.signif.stars = TRUE)
 
-# launch Bioconductor and set Bioconductor mirror at startup
-#source("http://bioconductor.org/biocLite.R")
+# set Bioconductor mirror at startup
 #options(BioC_mirror="http://mirrors.ustc.edu.cn/bioc/")   # mighty USTC
 #options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")   # TUNA then
-#source("https://bioc.ism.ac.jp/biocLite.R")   # an alternative Japanese mirror
 
 # set CRAN mirror. Better add at least two in case that one of them stops working
 options(repos="http://mirrors.ustc.edu.cn/CRAN/")
 #options(repos=c("http://mirrors.ustc.edu.cn/CRAN/", "https://mirrors.tongji.edu.cn/CRAN/",
 #                "http://mirrors.tuna.tsinghua.edu.cn/CRAN/", "https://mirrors.aliyun.com/CRAN/", 
 #                "http://mirror.lzu.edu.cn/CRAN/"))
-
-# lanuch Bioconductor may take too long, disable auto start and start when needed
-source.bio <- function(){
-	source("http://bioconductor.org/biocLite.R")
-	options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")  # "http://mirrors.ustc.edu.cn/bioc/" 
-}
+# set Bioconductor mirror at startup
+options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")  # "http://mirrors.ustc.edu.cn/bioc/" 
+#options(BioC_mirror="http://mirrors.ustc.edu.cn/bioc/")   # mighty USTC
+#options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")   # TUNA then
 
 # useful little customized functions
 cd <- setwd
@@ -32,9 +28,10 @@ hh <- function(d) {
 }
 notify <- function(){
 	cmd <- "notify-send"
-	system2(cmd, args="-i emblem-default 'R Message' 'Mission Complete!'")
+	system2(cmd, args="-i notification-message-im 'R Message' 'Mission Complete, Next->!'")
 }
 beep <- function(){beepr::beep()}
+q <- function (save = "no", ...){quit(save = save, ...)}
 
 # load favorite packages automatically at startup
 # options(defaultPackages=c(getOption("defaultPackages"), 'beepr'))

@@ -1,11 +1,39 @@
-xterm*faceName: Source Code Pro:style=Regular
+XTerm*faceName: Source Code Pro:style=Regular
 ! support chinese
-xterm*faceNameDoublesize: Droid Sans Fallback:style=Regular
-xterm*faceSize: 10
+XTerm*faceNameDoublesize: Droid Sans Fallback:style=Regular
+XTerm*faceSize: 12
 
-xterm*vt100.geometry: 120x50
-xterm*loginshell: true
+XTerm*vt100.geometry: 130x40
+XTerm*loginshell: true
 ! support 256color
-xterm*termName: xterm-256color
+XTerm*termName: xterm-256color
 ! set Ctrl + V for paste   http://forum.ubuntu.org.cn/viewtopic.php?t=143221
-XTerm*VT100.Translations: #override Ctrl <KeyPress> V: insert-selection(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n <BtnUp>: select-end(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n Ctrl <KeyPress> P: print() \n
+XTerm*VT100.Translations: #override \
+    Ctrl <KeyPress> V: insert-selection(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+    <BtnUp>: select-end(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+    Ctrl <KeyPress> P: print() \n
+XTerm*visualBell: true
+XTerm*audioBell: false
+
+XTerm*cursorBlink: true
+
+XTerm*locale: true
+XTerm.utf8:     true
+XTerm*utf8Title: true
+
+UXTerm*visualBell: true
+UXTerm*audioBell: false
+UXTerm*faceName: Source Code Pro:style=Regular
+! support chinese
+UXTerm*faceNameDoublesize: Droid Sans Fallback:style=Regular
+UXTerm*faceSize: 12
+
+UXTerm*vt100.geometry: 130x40
+UXTerm*loginshell: true
+! support 256color
+UXTerm*termName: xterm-256color
+! set Ctrl + V for paste   http://forum.ubuntu.org.cn/viewtopic.php?t=143221
+UXTerm*VT100.Translations: #override \
+    Ctrl <KeyPress> V: insert-selection(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+    <BtnUp>: select-end(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+    Ctrl <KeyPress> P: print() \n

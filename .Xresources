@@ -1,9 +1,46 @@
-XTerm*faceName: Source Code Pro:style=Regular
+URxvt.perl-lib: /home/adam/.urxvt/ext/
+! no space between EXTs
+URxvt.perl-ext-common: tabbed,matcher,selection-to-clipboard,pasta
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+URxvt.keysym.Control-Shift-V:     perl:pasta:paste
+URxvt.clipboard.autocopy: true
+
+URxvt.iconFile:    /usr/share/pixmaps/urxvt.xpm
+!URxvt.iconFile:    /usr/share/icons/hicolor/scalable/apps/xterm-color.svg
+
+
+!! URxvt Appearance
+URxvt.font: xft:Fantasque Sans Mono:style=Regular,\
+    xft:Noto Sans CJK SC:style=Regular
+URxvt.boldFont: xft:Fantasque Sans Mono:style=Bold,\
+    xft:Noto Sans CJK SC:style=Bold
+URxvt.italicFont: xft:Fantasque Sans Mono:style=Italic,\
+    xft:Noto Serif CJK SC:style=Regular
+URxvt.boldItalicfont: xft:Fantasque Sans Mono:style=Bold Italic
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 145x45
+URxvt.internalBorder: 10
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: true
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+URxvt.iso14755: false
+
+
+! XTERM and UXterm
+
+XTerm*faceName:  Fantasque Sans Mono:style=Regular
 ! support chinese
 XTerm*faceNameDoublesize: Droid Sans Fallback:style=Regular
 XTerm*faceSize: 12
 
-XTerm*vt100.geometry: 130x40
+XTerm*vt100.geometry: 160x45
 XTerm*loginshell: true
 ! support 256color
 XTerm*termName: xterm-256color
@@ -23,12 +60,12 @@ XTerm*utf8Title: true
 
 UXTerm*visualBell: true
 UXTerm*audioBell: false
-UXTerm*faceName: Source Code Pro:style=Regular
+UXTerm*faceName: Fantasque Sans Mono:style=Regular
 ! support chinese
 UXTerm*faceNameDoublesize: Droid Sans Fallback:style=Regular
 UXTerm*faceSize: 12
 
-UXTerm*vt100.geometry: 130x40
+UXTerm*vt100.geometry: 160x45
 UXTerm*loginshell: true
 ! support 256color
 UXTerm*termName: xterm-256color
@@ -37,3 +74,45 @@ UXTerm*VT100.Translations: #override \
     Ctrl <KeyPress> V: insert-selection(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
     <BtnUp>: select-end(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
     Ctrl <KeyPress> P: print() \n
+
+
+! color settings are for all terminals
+
+! Colorscheme
+
+! special
+*.foreground: #93a1a1
+*.background: #141c21
+*.cursorColor: #afbfbf
+
+! black
+*.color0: #263640
+*.color8: #4a697d
+
+! red
+*.color1: #d12f2c
+*.color9: #fa3935
+
+! green
+*.color2: #819400
+*.color10: #a4bd00
+
+! yellow
+*.color3: #b08500
+*.color11: #d9a400
+
+! blue
+*.color4: #2587cc
+*.color12: #2ca2f5
+
+! magenta
+*.color5: #696ebf
+*.color13: #8086e8
+
+! cyan
+*.color6: #289c93
+*.color14: #33c5ba
+
+! white
+*.color7: #bfbaac
+*.color15: #fdf6e3

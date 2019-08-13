@@ -1,15 +1,16 @@
 # customized options
-options(prompt="\033[0;36mR >>> \033[0m", continue="... ")
-options(editor="vim", menu.graphics=FALSE)
-options(max.print=1000)
-options(stringsAsFactors = FALSE, show.signif.stars = TRUE)
-
+options(prompt="\033[0;36mR >>> \033[0m", continue="... ", editor="vim")
+options(show.signif.stars = TRUE, menu.graphics=FALSE)
+options(max.print=300)
+options(stringsAsFactors = FALSE)
+options("download.file.method" = "libcurl")  # https://github.com/r-lib/remotes/issues/350
+utils::rc.settings( ipck=TRUE)
 # set Bioconductor mirror at startup
 #options(BioC_mirror="http://mirrors.ustc.edu.cn/bioc/")   # mighty USTC
 #options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")   # TUNA then
 
 # set CRAN mirror. Better add at least two in case that one of them stops working
-options(repos="http://mirrors.ustc.edu.cn/CRAN/")
+options(repos="http://mirrors.tuna.tsinghua.edu.cn/CRAN/")
 #options(repos=c("http://mirrors.ustc.edu.cn/CRAN/", "https://mirrors.tongji.edu.cn/CRAN/",
 #                "http://mirrors.tuna.tsinghua.edu.cn/CRAN/", "https://mirrors.aliyun.com/CRAN/", 
 #                "http://mirror.lzu.edu.cn/CRAN/"))
@@ -30,11 +31,12 @@ notify <- function(){
 	cmd <- "notify-send"
 	system2(cmd, args="-i notification-message-im 'R Message' 'Mission Complete, Next->!'")
 }
-beep <- function(){beepr::beep()}
-q <- function (save = "no", ...){quit(save = save, ...)}
+beep <- function() {beepr::beep()}
+q <- function(save = "no", ...) {quit(save = save, ...)}
+u <- function() { rvcheck::update_all(check_R = FALSE) }
 
 # load favorite packages automatically at startup
-# options(defaultPackages=c(getOption("defaultPackages"), 'beepr'))
+#options(defaultPackages=c(getOption("defaultPackages"), 'colorout'))
 
 # display greeting message at startup
 .First <- function(){

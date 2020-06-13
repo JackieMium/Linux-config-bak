@@ -54,9 +54,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# completion for Kitty terminal
-kitty + complete setup zsh | source /dev/stdin
-
 ##########################################################################
 ##### Useful alias #######################################################
 ##########################################################################
@@ -167,3 +164,10 @@ export UPDATE_ZSH_DAYS=13
 plugins=(git extract colored-man-pages sudo)
 
 source $ZSH/oh-my-zsh.sh
+
+
+#####################################################
+# CAUTION: this line has to be at the BOTTOM
+# ###################################################
+# completion for Kitty terminal
+kitty + complete setup zsh | source /dev/stdin

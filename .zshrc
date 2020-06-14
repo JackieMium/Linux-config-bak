@@ -20,6 +20,22 @@ LD_LIBRARY_PATH=$JRE_HOME/lib/amd64:$JRE_HOME/lib/amd64/server
 #CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
 export JAVA_HOME JRE_HOME LD_LIBRARY_PATH
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/adam/Programs/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/adam/Programs/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/adam/Programs/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/adam/Programs/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
 # remenber /sbin:/usr/sbin:/usr/local/sbin for root!
 PATH=$PATH:$JAVA_HOME/bin:/opt/AppImage:/opt/bin:/home/adam/bin:/home/adam/.local/bin
 export PATH
@@ -37,22 +53,6 @@ if [ "$TERM" = "xterm-256color" ]; then
 	export LANG="en_US.UTF-8"
 	export LANGUAGE="en_US"
 fi
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/adam/Programs/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/adam/Programs/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/adam/Programs/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/adam/Programs/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 ##########################################################################
 ##### Useful alias #######################################################

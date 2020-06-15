@@ -1,3 +1,8 @@
+# CTRL-U to delete before cursor
+# https://askubuntu.com/q/1047849
+bindkey -e
+bindkey \^U backward-kill-line
+
 ##########################################################################
 ##### EXPORT some ENV var ################################################
 ##########################################################################
@@ -39,6 +44,8 @@ unset __conda_setup
 # remenber /sbin:/usr/sbin:/usr/local/sbin for root!
 PATH=$PATH:$JAVA_HOME/bin:/opt/AppImage:/opt/bin:/home/adam/bin:/home/adam/.local/bin
 export PATH
+# make sure default path is always at the beginning
+# see https://blog.yossarian.net/2015/02/27/The-Problem-With-PATH
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH

@@ -12,14 +12,17 @@ utils::rc.settings(ipck = TRUE)
 #options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")   # TUNA then
 
 # set CRAN mirror. Better add at least two in case that one of them stops working
-#options(repos = "https://mirrors.tongji.edu.cn/CRAN/")
-options(repos=c("https://mirrors.aliyun.com/CRAN/", "http://mirrors.tuna.tsinghua.edu.cn/CRAN/", "http://mirrors.ustc.edu.cn/CRAN/", "http://mirror.lzu.edu.cn/CRAN/"))
+options(repos = "https://mirror.lzu.edu.cn/CRAN/")
+# options(repos=c("https://mirrors.aliyun.com/CRAN/", "http://mirrors.tuna.tsinghua.edu.cn/CRAN/", "http://mirrors.ustc.edu.cn/CRAN/", "http://mirror.lzu.edu.cn/CRAN/", "https://mirrors.tongji.edu.cn/CRAN/"))
 # set Bioconductor mirror at startup
 options(BioC_mirror = "https://mirrors.tuna.tsinghua.edu.cn/bioconductor")  # "http://mirrors.ustc.edu.cn/bioc/"
 #options(BioC_mirror="http://mirrors.ustc.edu.cn/bioc/")   # mighty USTC
 #options(BioC_mirror="https://mirrors.tuna.tsinghua.edu.cn/bioconductor")   # TUNA then
 
 # useful little customized functions
+now <- function() {
+  format(Sys.time(), " %Y-%m-%d %H:%M:%S")
+}
 cd <- setwd
 pwd <- getwd
 hh <- function(d) {
@@ -43,6 +46,22 @@ uu  <- function() {
 u <- function() {
   update.packages(checkBuild = TRUE)
 }
+# unload a pkg
+# use as detach_package("pkg", TRUE) detach_package(pkg)
+# https://stackoverflow.com/q/6979917
+detach_package <- function(pkg, character.only = FALSE)
+{
+  if(!character.only)
+  {
+    pkg <- deparse(substitute(pkg))
+  }
+  search_item <- paste("package", pkg, sep = ":")
+  while(search_item %in% search())
+  {
+    detach(search_item, unload = TRUE, character.only = TRUE)
+  }
+}
+
 # load favorite packages automatically at startup
 #options(defaultPackages=c(getOption("defaultPackages"), 'colorout'))
 
@@ -52,9 +71,9 @@ u <- function() {
                 "Welcome back,",
                 Sys.getenv("USER"),
                 "!\n",
-                "Current working directory:",
+                "Current working directory: ",
                 getwd(),
-                "\nDate and time:",
+                "\nDate and time: ",
                 format(Sys.time(), "%Y-%m-%d %H:%M"),
                 "\r\n"
         )
@@ -63,6 +82,6 @@ u <- function() {
 }
 
 # goodbye message at closing
-.Last <- function() {
-    cat("\nGoodbye at ", date(), "\n\n")
-}
+#.Last <- function() {
+#    cat("\nGoodbye at ", date(), "\n\n")
+#}

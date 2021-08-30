@@ -1,0 +1,22 @@
+######## startup layout ###########
+###################################
+
+# Session MySn
+new -s MySn -n 1_full
+neww -n 2_verti
+splitw -h -p 50 
+selectp -t 1
+neww -n 3_panes
+splitw -h -p 50 
+selectw -t 3 
+selectp -t 2
+splitw -v -p 50 
+selectp -t 1
+neww -n apt
+splitw -h -p 50
+selectp -t 1
+neww -n R
+splitw -h -p 50
+selectp -t 1
+neww -n Postgres
+selectw -t 1

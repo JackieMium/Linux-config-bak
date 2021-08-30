@@ -1,0 +1,7 @@
+# Session BkSn 
+new -s BakSn -n 1_full 
+neww -n 2_col 
+splitw -h -p 50  
+neww -n R
+splitw -h -p 50
+selectw -t 1

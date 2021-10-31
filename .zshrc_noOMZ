@@ -25,11 +25,14 @@
   bindkey "^[d" kill-word
   bindkey '^\'    accept-and-hold
   # UP DOWN to browser/search history based on current input
+  # https://unix.stackexchange.com/a/285151
   autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
   zle -N up-line-or-beginning-search
   zle -N down-line-or-beginning-search
-  bindkey "$key[Up]" up-line-or-beginning-search
-  bindkey "$key[Down]" down-line-or-beginning-search
+  bindkey "^[[A" up-line-or-beginning-search # Up, use C-v to found out
+  bindkey "^[[B" down-line-or-beginning-search # Down
+  #bindkey "$key[Up]" up-line-or-beginning-search
+  #bindkey "$key[Down]" down-line-or-beginning-search
   
   # Alt-S to insert sudo to beginning
   insert_sudo() { zle beginning-of-line; zle -U "sudo " }

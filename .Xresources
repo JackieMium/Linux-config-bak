@@ -1,37 +1,5 @@
-URxvt.perl-lib: /home/adam/.urxvt/ext/
-! no space between EXTs
-URxvt.perl-ext-common: tabbed,matcher,selection-to-clipboard,pasta
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
-
-URxvt.keysym.Control-Shift-V:     perl:pasta:paste
-URxvt.clipboard.autocopy: true
-
-URxvt.iconFile:    /usr/share/pixmaps/urxvt.xpm
-!URxvt.iconFile:    /usr/share/icons/hicolor/scalable/apps/xterm-color.svg
-
-
-!! URxvt Appearance
-URxvt.font: xft:Fantasque Sans Mono:style=Regular,\
-    xft:Noto Sans CJK SC:style=Regular
-URxvt.boldFont: xft:Fantasque Sans Mono:style=Bold,\
-    xft:Noto Sans CJK SC:style=Bold
-URxvt.italicFont: xft:Fantasque Sans Mono:style=Italic,\
-    xft:Noto Serif CJK SC:style=Regular
-URxvt.boldItalicfont: xft:Fantasque Sans Mono:style=Bold Italic
-URxvt.letterSpace: 0
-URxvt.lineSpace: 0
-URxvt.geometry: 145x45
-URxvt.internalBorder: 10
-URxvt.cursorBlink: true
-URxvt.cursorUnderline: false
-URxvt.saveline: 2048
-URxvt.scrollBar: false
-URxvt.scrollBar_right: true
-URxvt.urgentOnBell: true
-URxvt.depth: 24
-URxvt.iso14755: false
-
+Xcursor.theme: macOSMonterey
+Xcursor.size: 22
 
 ! XTERM and UXterm
 
@@ -46,7 +14,7 @@ XTerm*loginshell: true
 XTerm*termName: xterm-256color
 ! set Ctrl + V for paste   http://forum.ubuntu.org.cn/viewtopic.php?t=143221
 XTerm*VT100.Translations: #override \
-    Ctrl <KeyPress> V: insert-selection(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+    Ctrl Shift <Key> V: insert-selection(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
     <BtnUp>: select-end(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
     Ctrl <KeyPress> P: print() \n
 XTerm*visualBell: true
@@ -71,7 +39,7 @@ UXTerm*loginshell: true
 UXTerm*termName: xterm-256color
 ! set Ctrl + V for paste   http://forum.ubuntu.org.cn/viewtopic.php?t=143221
 UXTerm*VT100.Translations: #override \
-    Ctrl <KeyPress> V: insert-selection(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
+    Ctrl Shift <Key> V: insert-selection(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
     <BtnUp>: select-end(CLIPBOARD,PRIMARY,CUT_BUFFER0) \n\
     Ctrl <KeyPress> P: print() \n
 
@@ -80,39 +48,125 @@ UXTerm*VT100.Translations: #override \
 
 ! Colorscheme
 
-! special
-*.foreground: #93a1a1
-*.background: #141c21
-*.cursorColor: #afbfbf
+!! special
+!*.foreground: #93a1a1
+!*.background: #141c21
+!*.cursorColor: #afbfbf
+!
+!! black
+!*.color0: #263640
+!*.color8: #4a697d
+!
+!! red
+!*.color1: #d12f2c
+!*.color9: #fa3935
+!
+!! green
+!*.color2: #819400
+!*.color10: #a4bd00
+!
+!! yellow
+!*.color3: #b08500
+!*.color11: #d9a400
+!
+!! blue
+!*.color4: #2587cc
+!*.color12: #2ca2f5
+!
+!! magenta
+!*.color5: #696ebf
+!*.color13: #8086e8
+!
+!! cyan
+!*.color6: #289c93
+!*.color14: #33c5ba
+!
+!! white
+!*.color7: #bfbaac
+!*.color15: #fdf6e3
 
-! black
-*.color0: #263640
-*.color8: #4a697d
 
-! red
-*.color1: #d12f2c
-*.color9: #fa3935
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Yet another color scheme
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! https://github.com/raphamorim/lucario
+xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+xterm*termName: xterm-color
+xterm*eightBitInput: false
 
-! green
-*.color2: #819400
-*.color10: #a4bd00
-
-! yellow
-*.color3: #b08500
-*.color11: #d9a400
-
-! blue
-*.color4: #2587cc
-*.color12: #2ca2f5
-
-! magenta
-*.color5: #696ebf
-*.color13: #8086e8
-
-! cyan
-*.color6: #289c93
-*.color14: #33c5ba
-
-! white
-*.color7: #bfbaac
-*.color15: #fdf6e3
+!BLK Cursor
+#define _color0        #4f4f4f
+#define _color8        #4f4f4f
+!RED Tag
+#define _color1        #ff6c60
+#define _color9        #fa6960
+!GRN SpecialKey
+#define _color2        #fbb036
+#define _color10       #fbb036
+!YEL Keyword
+#define _color3        #ffffb6
+#define _color11       #feffb9
+!BLU Number
+#define _color4        #5796ed
+#define _color12       #6b9fed
+!MAG Precondit
+#define _color5        #ff73fd
+#define _color13       #fc6ffa
+!CYN Float
+#define _color6        #8ee478
+#define _color14       #8ee478
+!WHT Search
+#define _color7        #eeeeee
+#define _color15       #ffffff
+!FMT Include, StatusLine, ErrorMsg
+#define _colorBD       #ffffff
+#define _colorUL       #ffffff
+#define _colorIT       #ffffff
+!TXT Normal, Normal, Cursor
+#define _foreground    #f8f8f2
+#define _background    #2b3e50
+#define _cursorColor   #e3bf21
+XTerm*color0         : _color0
+XTerm*color1         : _color1
+XTerm*color2         : _color2
+XTerm*color3         : _color3
+XTerm*color4         : _color4
+XTerm*color5         : _color5
+XTerm*color6         : _color6
+XTerm*color7         : _color7
+XTerm*color8         : _color8
+XTerm*color9         : _color9
+XTerm*color10        : _color10
+XTerm*color11        : _color11
+XTerm*color12        : _color12
+XTerm*color13        : _color13
+XTerm*color14        : _color14
+XTerm*color15        : _color15
+XTerm*colorBD        : _colorBD
+XTerm*colorIT        : _colorIT
+XTerm*colorUL        : _colorUL
+XTerm*foreground     : _foreground
+XTerm*background     : _background
+XTerm*cursorColor    : _cursorColor
+UXTerm*color0         : _color0
+UXTerm*color1         : _color1
+UXTerm*color2         : _color2
+UXTerm*color3         : _color3
+UXTerm*color4         : _color4
+UXTerm*color5         : _color5
+UXTerm*color6         : _color6
+UXTerm*color7         : _color7
+UXTerm*color8         : _color8
+UXTerm*color9         : _color9
+UXTerm*color10        : _color10
+UXTerm*color11        : _color11
+UXTerm*color12        : _color12
+UXTerm*color13        : _color13
+UXTerm*color14        : _color14
+UXTerm*color15        : _color15
+UXTerm*colorBD        : _colorBD
+UXTerm*colorIT        : _colorIT
+UXTerm*colorUL        : _colorUL
+UXTerm*foreground     : _foreground
+UXTerm*background     : _background
+UXTerm*cursorColor    : _cursorColor

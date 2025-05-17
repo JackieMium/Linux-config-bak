@@ -7,6 +7,7 @@ set background=dark
 " try color scheme in /usr/share/vim/vim81/colors
 colorscheme  koehler
 
+set maxmempattern=3000
 
 """""""""""""""""""""""""""""""""""""""
 " 这一部分参考阮一峰博客
@@ -16,7 +17,7 @@ set nocompatible
 " 显示行号
 set nu
 " 行号显示为相对行号
-set relativenumber
+" set relativenumber
 " 高亮光标所在行
 set cursorline
 " 垂直滚动时，光标距离顶部/底部的行数
@@ -72,9 +73,9 @@ set nobackup
 set undofile
 " 设置备份文件、交换文件、操作历史文件的保存位置
 " 结尾的 // 表示生成的文件名带有绝对路径，路径中用 % 替换目录分隔符，这样可以防止文件重名
-set backupdir=~/.vim/.backup//  
-set directory=~/.vim/.swp//
-set undodir=~/.vim/.undo//
+set backupdir=~/.vim/backup/
+set directory=~/.vim/swp/
+set undodir=~/.vim/undo/
 " 自动切换工作目录
 " 这主要用在一个 Vim 会话之中打开多个文件的情况，默认的工作目录是打开的第一个文件的目录
 " 该配置可以将工作目录自动切换到，正在编辑的文件的目录
@@ -123,10 +124,13 @@ set foldlevelstart=10   " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " fold based on indent level
 
+" ignore certain file types with wildmenu
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.exe,*.img,*.xlsx,*.xls,*.ppt,*.pptx,*.rds,*.rda,*.ipynb
+
 
 " Allow saving of files as sudo when I forgot to start vim using sudo
 " the > /dev/null part explicitly throws away the standard output
-cmap w!! w !sudo tee > /dev/null %
+cmap w!! w !doas tee > /dev/null %
 
 
 " Uncomment the following to have Vim jump to the last position when
@@ -156,3 +160,23 @@ if &term =~ '^screen\|^tmux' && exists('&t_BE')
   exec "set t_PS=\033[200~"
   exec "set t_PE=\033[201~"
 endif
+
+" vim-plugin block
+call plug#begin()
+
+  "Plug 'alaviss/nim.nvim'
+  Plug 'zah/nim.vim'
+
+call plug#end()
+
+fun! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+    call GotoDefinition_{&filetype}()
+  else
+    exe "norm! \<C-]>"
+  endif
+endf
+
+" Jump to tag
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
